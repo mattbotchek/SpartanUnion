@@ -11,9 +11,11 @@ import SystemConfiguration
 import UIKit
 import WebKit
 
+// This handles if a customer wants a custom drink
+// It is very similar to ViewController.swift in how it is set up.
 class CustomViewController: UIViewController {
 	
-	
+	// Variables
 	@IBOutlet weak var custom_drink_field: UITextField!
 	var drink: String!
 	
@@ -46,7 +48,7 @@ class CustomViewController: UIViewController {
 		}
 	}
 	
-	
+	// Button press transfers data with the transition to the next View Controller
 	@IBAction func drinkSender(_ sender: Any) {
 		drink = custom_drink_field.text
 		flavor = custom_flavor_field.text

@@ -6,6 +6,8 @@
 //  Copyright © 2018 Matthew Botchek. All rights reserved.
 //
 
+// This sets the total drink value (ie, name, room, drink)
+// Just a middle man for handling passing of data.
 import Foundation
 class Order {
 	

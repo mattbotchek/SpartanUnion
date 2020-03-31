@@ -12,8 +12,11 @@ import Foundation
 import Foundation
 import MessageUI
 
+// This is the final view controller and handles emailing and size/listing drinks to be ordered
 internal class ViewController4 : UIViewController, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate {
 	
+	
+	// Variables set here
 	var choices = [String] ()
 	
 	var fullDrink = String ()
@@ -52,6 +55,7 @@ internal class ViewController4 : UIViewController, UITableViewDataSource, UITabl
 		return cell
 	}
 	
+	// Opens and initializes keyboard. For extra options. 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		fullDrink = Order().returnFullDrink()
@@ -84,7 +88,7 @@ internal class ViewController4 : UIViewController, UITableViewDataSource, UITabl
 	}
 	
 	
-	
+	// This will call the function sendEmail() which is initialized by a UIButton
 	@IBAction func submitOrder(_ sender: UIButton) {
 		sendEmail()
 	}
@@ -96,6 +100,10 @@ internal class ViewController4 : UIViewController, UITableViewDataSource, UITabl
 		present(alert, animated: true, completion: nil)
 	}
 	
+	// This composes, formats, and retrieves data (not in that order) for the email that
+	// Will be sent to the Spartan Union.
+	// Essentially (hopefully) only way this can truly fail is if the phone user does not
+	// Have an email.
 	func sendEmail() {
 		if MFMailComposeViewController.canSendMail() {
 			if size == ""
@@ -129,7 +137,6 @@ internal class ViewController4 : UIViewController, UITableViewDataSource, UITabl
 	{
 		extra.resignFirstResponder();
 	}
-	
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		keyboardDissapear()

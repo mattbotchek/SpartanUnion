@@ -10,6 +10,7 @@ import UIKit
 import WebKit
 import Foundation
 
+// This is for the 3rd ViewController that handles what flavor customers want.
 internal class ViewController3 : UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
 	
@@ -59,6 +60,7 @@ internal class ViewController3 : UIViewController, UITableViewDataSource, UITabl
 		self.performSegue(withIdentifier: "to4", sender: self)
 	}
 	
+	// Gets the values for flavors within the JSON stored by JSON.swift
 	func getJson(){
 		
 		if let jsonObj = JSON().returnJSON() as? NSDictionary {

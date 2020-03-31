@@ -19,17 +19,19 @@ class ViewController: UIViewController {
 	
 	//var drinkArray = [String]()
 	
-	
+	// Gets the value for the text field NAME in the Room/Name controller (1st in line)
 	@IBOutlet weak var textFieldName: UITextField!
 	var name: String!
 	
 	
-	
+	// Gets the value for the text field ROOM in the Room/Name controller (1st in line)
 	@IBOutlet weak var textFieldRoom: UITextField!
 	var room: String!
 	
 	
-	
+	// Runs when the view is first loaded and runs everything within function
+	// Essentially a "Start Up" function for view controllers
+	// Every view controller will have one.
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -41,6 +43,7 @@ class ViewController: UIViewController {
 
 	}
 
+	// Loads the keyboard and aligns at certain values (ie, 0 to 50)
 	@objc func keyboardWillShow(notification: NSNotification) {
 		if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
 			if self.view.frame.origin.y == 0{
@@ -49,7 +52,7 @@ class ViewController: UIViewController {
 		}
 	}
 	
-	
+	// Hides the keyboard when clicked off
 	@objc func keyboardWillHide(notification: NSNotification) {
 		if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
 			if self.view.frame.origin.y != 0{
@@ -58,7 +61,7 @@ class ViewController: UIViewController {
 		}
 	}
 	
-	
+	// Ensures internet is available, if not uses backup locally stored json file for drinks
 	func isInternetAvailable() -> Bool
 	{
 		var zeroAddress = sockaddr_in()
@@ -80,7 +83,7 @@ class ViewController: UIViewController {
 		return (isReachable && !needsConnection)
 	}
 	
-	
+	// Standard alert that needs better name, self explanitory
 	func showAlert() {
 		if !isInternetAvailable() {
 			let alert = UIAlertController(title: "Warning", message: "The Internet is not available", preferredStyle: .alert)
@@ -90,6 +93,8 @@ class ViewController: UIViewController {
 		}
 	}
 	
+	// Standard alert that needs better name, self explanitory
+	// Server in this case is the URL named in JSON.swift
 	func showAlert2() {
 		if !isInternetAvailable() {
 			let alert = UIAlertController(title: "Warning", message: "Connection to server failed", preferredStyle: .alert)

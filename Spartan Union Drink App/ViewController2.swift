@@ -9,8 +9,12 @@ import UIKit
 import WebKit
 import Foundation
 
+// This ViewController is for the second in line ViewController and is the
+// first scrolling/dynamically created drink list.
 internal class ViewController2 : UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
+	
+	// Initializing variables and grabs from the drink table
 	var drink = String ()
 	
 	@IBOutlet weak var drinkTable: UITableView!
@@ -70,8 +74,11 @@ internal class ViewController2 : UIViewController, UITableViewDataSource, UITabl
 		present(alert, animated: true, completion: nil)
 	}
 	
+	
+	// Fetches the stored json from JSON.swift and finds what it needs to list drinks
+	// In this case it is looking for the key header and listing each subsequent key that is
+	// Drink
 	func getJson(){
-		
 		
 		if let jsonObj = JSON().returnJSON() as? NSDictionary {
 			

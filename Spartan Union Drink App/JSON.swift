@@ -12,6 +12,8 @@ import WebKit
 
 class JSON {
 	
+	// Set the URL for the JSON endpoint here.
+	// Allows for any endpoint as long as it is readable Json
 	let URL_UNION = "https://pastebin.com/raw/ZByHtyva"
 	
 	static var json = NSDictionary ()
@@ -24,12 +26,14 @@ class JSON {
 		return JSON.json
 	}
 	
+	// Loops through and parses the data from the NSURL into "computer-friendly" json
 	func parseJSON(){
 		//creating a NSURL
 		let url = NSURL(string: URL_UNION)
 		
 		//fetching the data from the url
 		URLSession.shared.dataTask(with: (url as URL?)!, completionHandler: {(data, response, error) -> Void in
+			// Error catching
 			if error != nil
 			{
 				print(error!)
