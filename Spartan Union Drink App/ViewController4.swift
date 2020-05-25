@@ -91,6 +91,8 @@ internal class ViewController4 : UIViewController, UITableViewDataSource, UITabl
 	// This will call the function sendEmail() which is initialized by a UIButton
 	@IBAction func submitOrder(_ sender: UIButton) {
 		sendEmail()
+		scheduleLocalNotification()
+		notifyDrinkStatus()
 	}
 	
 	func showAlert() {
@@ -122,6 +124,46 @@ internal class ViewController4 : UIViewController, UITableViewDataSource, UITabl
 		} else {
 			self.showAlert()
 		}
+	}
+	
+	func scheduleLocalNotification() {
+	    let content = UNMutableNotificationContent()
+	    content.title = "Spartan Drink Notification"
+	    content.body = "Your drink is ready!"
+		content.sound = UNNotificationSound.default()
+
+	    // You can use the user info array if you need to include additional information in your local notification.
+	    // Then you could use that additional information to perform any kind of action when the notification is opened by the user
+	    content.userInfo = ["CustomData": "Your drink is ready"]
+
+	    let yourDate = Calendar.current.date(byAdding: .minute, value: 5, to: Date())!
+
+	    let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: yourDate.timeIntervalSinceNow, repeats: false)
+
+	    let request = UNNotificationRequest.init(identifier: "Spartan Drink Status", content: content, trigger: trigger)
+
+	    let center = UNUserNotificationCenter.current()
+	    center.add(request)
+	}
+	
+	func notifyDrinkStatus() {
+	    let content = UNMutableNotificationContent()
+	    content.title = "Spartan Drink Notification"
+	    content.body = "Your drink will be ready in 5 minutes"
+		content.sound = UNNotificationSound.default()
+
+	    // You can use the user info array if you need to include additional information in your local notification.
+	    // Then you could use that additional information to perform any kind of action when the notification is opened by the user
+	    content.userInfo = ["CustomData": "Your drink will be ready in 5 minutes"]
+
+	    let yourDate = Calendar.current.date(byAdding: .minute, value: 5, to: Date())!
+
+	    let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: yourDate.timeIntervalSinceNow, repeats: false)
+
+	    let request = UNNotificationRequest.init(identifier: "Spartan Drink Status", content: content, trigger: trigger)
+
+	    let center = UNUserNotificationCenter.current()
+	    center.add(request)
 	}
 	
 	func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Swift.Error?){

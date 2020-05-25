@@ -20,7 +20,6 @@
 		3442DA00207BC3960001C710 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3442D9FF207BC3960001C710 /* ViewController2.swift */; };
 		34B58C2520A1283000F7330C /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B58C2420A1283000F7330C /* JSON.swift */; };
 		34FD11FA20ADBBC6003BAABB /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 34FD11F920ADBBC6003BAABB /* Data.json */; };
-		8F8A27CE2419332B0009BC49 /* notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A27CD2419332B0009BC49 /* notifications.swift */; };
 		8FDEF9BB23E88ABE00A1392F /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEF9BA23E88ABE00A1392F /* CustomViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +60,6 @@
 		3442D9FF207BC3960001C710 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		34B58C2420A1283000F7330C /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		34FD11F920ADBBC6003BAABB /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
-		8F8A27CD2419332B0009BC49 /* notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
 		8FDEF9BA23E88ABE00A1392F /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,7 +127,6 @@
 				3432CA9120471CF70049ECA3 /* Assets.xcassets */,
 				3432CA9320471CF70049ECA3 /* LaunchScreen.storyboard */,
 				3432CA9620471CF70049ECA3 /* Info.plist */,
-				8F8A27CD2419332B0009BC49 /* notifications.swift */,
 			);
 			path = "Spartan Union Drink App";
 			sourceTree = "<group>";
@@ -288,7 +285,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				341662C12093F81400873964 /* Order.swift in Sources */,
-				8F8A27CE2419332B0009BC49 /* notifications.swift in Sources */,
 				34B58C2520A1283000F7330C /* JSON.swift in Sources */,
 				3432CA8D20471CF70049ECA3 /* ViewController.swift in Sources */,
 				3432CA8B20471CF70049ECA3 /* AppDelegate.swift in Sources */,

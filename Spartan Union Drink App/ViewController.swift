@@ -37,7 +37,6 @@ class ViewController: UIViewController {
 		// Do any additional setup after loading the view, typically from a nib.
 		JSON().parseJSON()
 		showAlert()
-		
 		NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
