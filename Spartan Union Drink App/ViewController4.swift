@@ -115,7 +115,7 @@ internal class ViewController4 : UIViewController, UITableViewDataSource, UITabl
 			let rm = Order().returnRoom()
 			let mail = MFMailComposeViewController()
 			mail.mailComposeDelegate = self
-			mail.setToRecipients(["brookfieldeast.spartanunion@gmail.com"])
+			mail.setToRecipients(["AN EMAIL ONCES USED THAT I SHALL NOT REVEAL"])
 			mail.setSubject("Drink Order")
 			mail.setMessageBody("Room: \(rm) \n Name: \(nm) \n Drink: \(fullDrink) \n Size: \(size) \n Extra: \(ex)", isHTML: false)
 			present(mail, animated: true)
