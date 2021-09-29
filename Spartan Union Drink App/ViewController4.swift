@@ -115,7 +115,7 @@ internal class ViewController4 : UIViewController, UITableViewDataSource, UITabl
 			let rm = Order().returnRoom()
 			let mail = MFMailComposeViewController()
 			mail.mailComposeDelegate = self
-			mail.setToRecipients(["AN EMAIL ONCES USED THAT I SHALL NOT REVEAL"])
+			mail.setToRecipients(["AN EMAIL ONCES USED THAT I SHALL NOT REVEAL"]) // Too lazy to rebase... so if really curious just go to history... It'll be gone at some point
 			mail.setSubject("Drink Order")
 			mail.setMessageBody("Room: \(rm) \n Name: \(nm) \n Drink: \(fullDrink) \n Size: \(size) \n Extra: \(ex)", isHTML: false)
 			present(mail, animated: true)
