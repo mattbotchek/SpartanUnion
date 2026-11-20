@@ -1,4 +1,4 @@
-Created by: Matthwe Botchek
+Created by: Matthew Botchek
 
 # SpartanUnion
 Spartan Union Drink App
